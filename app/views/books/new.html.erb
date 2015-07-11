@@ -1,20 +1,19 @@
 <h2>Create a New Book</h2>
 
+<%= form_for @book do |f| %>
+
 <div class="field">
 <%= f.label :author %>
-<br />
 <%=f.text_field :author %>
 </div>
-<br>
+
 
 <div class="field">
 	<%= f.label :title %>
-<br />
 	<%=f.text_field :title %>
 </div>
-<br>
+
 <div class="actions">
-		<%= f.submit %>
-	</div>
+	<%= f.submit %>
+</div>
 <% end %>
-<br>

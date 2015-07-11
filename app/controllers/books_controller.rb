@@ -1,11 +1,11 @@
 class BooksController < ApplicationController
-	
+
 	def new
     	@book = Book.new
     end
 
 	def create
-		@book = book.new(book_params)
+		@book = Book.new(book_params)
 		if Book.find_by(title: params[:book][:title])
 			redirect_to new_book_path, notice: 'The book already exists. Please create a new one...'	
 		elsif @book.valid?
@@ -18,7 +18,7 @@ class BooksController < ApplicationController
 
 	private
 
-	def book_paramas
+	def book_params
 		params.require(:book).permit(:author, :title)
 	end
 
